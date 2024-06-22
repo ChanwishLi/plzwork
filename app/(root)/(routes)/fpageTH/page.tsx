@@ -4,6 +4,13 @@ import React, { useState } from 'react';
 import '../../../../styles2/fpage.css';
 import Link from "next/link";
 
+type Profile = {
+    name: string;
+    stars: number;
+    badges: string[];
+    description: string;
+    email: string;
+};
 
 const profiles = [
     {
@@ -29,7 +36,11 @@ const profiles = [
     }
 ];
 
-const ProfileCard = ({profile}) => {
+type ProfileCardProps = {
+    profile: Profile;
+};
+
+const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
     const [emailSent, setEmailSent] = useState(false);
 
     const handleEmailClick = () => {
@@ -40,34 +51,32 @@ const ProfileCard = ({profile}) => {
         }
     };
 
-
-
     return (
         <Link href="requestsent">
-        <div className="cardv2" onClick={handleEmailClick}>
-            <div className="profile-pic"></div>
-            <div className="details">
-                <div className="name">Name: {profile.name}</div>
-                <div className="stars">
-                    {[...Array(profile.stars)].map((_, i) => (
-                        <span key={i}>★</span>
-                    ))}
-                </div>
-                <div className="badges">
-                    {profile.badges.map((badge, index) => (
-                        <span className="badge" key={index}>{badge}</span>
-                    ))}
-                </div>
-                <div className="description">
-                    {profile.description}
+            <div className="cardv2" onClick={handleEmailClick}>
+                <div className="profile-pic"></div>
+                <div className="details">
+                    <div className="name">Name: {profile.name}</div>
+                    <div className="stars">
+                        {[...Array(profile.stars)].map((_, i) => (
+                            <span key={i}>★</span>
+                        ))}
+                    </div>
+                    <div className="badges">
+                        {profile.badges.map((badge, index) => (
+                            <span className="badge" key={index}>{badge}</span>
+                        ))}
+                    </div>
+                    <div className="description">
+                        {profile.description}
+                    </div>
                 </div>
             </div>
-        </div>
         </Link>
     );
-}
+};
 
-const ProfileCardList = () => {
+const ProfileCardList: React.FC = () => {
     return (
         <div className="profile-card-list">
             {profiles.map((profile, index) => (
@@ -75,6 +84,6 @@ const ProfileCardList = () => {
             ))}
         </div>
     );
-}
+};
 
 export default ProfileCardList;

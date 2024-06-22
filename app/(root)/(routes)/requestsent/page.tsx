@@ -1,7 +1,7 @@
 import React from 'react';
 
-const request = () => {
-    const containerStyle = {
+const Request: React.FC = () => {
+    const containerStyle: React.CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -10,7 +10,7 @@ const request = () => {
         fontFamily: 'Arial, sans-serif',
     };
 
-    const textStyle = {
+    const textStyle: React.CSSProperties = {
         margin: '10px 0',
         padding: '10px',
         color: '#333',
@@ -18,7 +18,7 @@ const request = () => {
     };
 
     const languages = [
-        { id: 1, text: 'Thank you For using Guider!', language: 'English' },
+        { id: 1, text: 'Thank you for using Guider!', language: 'English' },
         { id: 2, text: 'ขอบคุณที่ใช้ไกเดอร์!', language: 'Thai' },
         { id: 3, text: '感谢您使用 Guider！', language: 'Chinese' },
     ];
@@ -34,4 +34,4 @@ const request = () => {
     );
 };
 
-export default request;
+export default Request;

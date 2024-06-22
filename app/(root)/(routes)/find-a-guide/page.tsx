@@ -9,6 +9,7 @@ import '../../../../js/destination.js';
 import { Link as ScrollLink } from "react-scroll";
 import React, { useEffect } from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 
 
 
@@ -33,7 +34,7 @@ const loadScript = (src: string, type = 'text/javascript', isModule = false): Pr
 const handleLeftClick = () => {
   console.log("Left button clicked");
   const activeGroup = document.querySelector('.card-group[data-status="active"]') as HTMLElement;
-  let newIndex = parseInt(activeGroup.dataset.index) - 1;
+  let newIndex = parseInt(activeGroup.dataset.index as string) - 1;
   if (newIndex < 0) {
     newIndex = document.querySelectorAll('.card-group').length - 1;
   }
@@ -44,7 +45,7 @@ const handleLeftClick = () => {
 const handleRightClick = () => {
   console.log("Right button clicked");
   const activeGroup = document.querySelector('.card-group[data-status="active"]') as HTMLElement;
-  let newIndex = parseInt(activeGroup.dataset.index) + 1;
+  let newIndex = parseInt(activeGroup.dataset.index as string) + 1;
   if (newIndex >= document.querySelectorAll('.card-group').length) {
     newIndex = 0;
   }
@@ -301,15 +302,33 @@ const FindAGuidePage: React.FC = () => {
       <div>
         <div className="card-swiper-buttons">
           <button id="left" onClick={handleLeftClick}>
-  <ion-icon name="arrow-back-circle-outline" />
+          <Image
+          src="https://www.svgrepo.com/show/384737/rounded-square-left-direction.svg"
+          width={400}
+          height={300}
+          className="object-cover rounded-lg shadow-md"
+          alt="Left"
+        />
 </button>
 <a>
   <button className="special-button" id="check">
-    <ion-icon name="checkmark-outline" />
+  <Image
+            src="https://www.svgrepo.com/show/506227/like.svg"
+            width={400}
+            height={300}
+            className="object-cover rounded-lg shadow-md"
+            alt="Check"
+          />
   </button>
 </a>
 <button id="right" onClick={handleRightClick}>
-  <ion-icon name="arrow-forward-circle-outline" />
+<Image
+          src="https://www.svgrepo.com/show/384732/rounded-square-arrow-right-direction.svg"
+          width={400}
+          height={300}
+          className="object-cover rounded-lg shadow-md"
+          alt="Right"
+        />
 </button>
         </div>
       </div>
