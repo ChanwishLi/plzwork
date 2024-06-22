@@ -1,6 +1,5 @@
 // app/(root)/find-a-guide/page.tsx
 
-"use client"
 
 import Head from 'next/head'
 import Script from 'next/script'
@@ -71,22 +70,6 @@ const switchGroup = (newIndex: number) => {
 
 const FindAGuidePage: React.FC = () => {
   useEffect(() => {
-    // Load ionicons scripts
-    loadScript('https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js', 'module', true)
-      .then(() => {
-        console.log('Ionicons esm.js loaded successfully');
-      })
-      .catch((error) => {
-        console.error('Error loading Ionicons esm.js:', error);
-      });
-
-    loadScript('https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')
-      .then(() => {
-        console.log('Ionicons loaded successfully');
-      })
-      .catch((error) => {
-        console.error('Error loading Ionicons:', error);
-      });
 
     // Attach the event handlers to the buttons
     document.getElementById('left')?.addEventListener('click', handleLeftClick);

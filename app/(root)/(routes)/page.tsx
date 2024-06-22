@@ -1,4 +1,5 @@
 // app/(root)/page.tsx
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Link from "next/link";
@@ -13,6 +14,7 @@ const HomePage = () => {
     const toggleReadMore = () => {
         setIsReadMore(!isReadMore);
     };
+
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
             <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
@@ -57,7 +59,7 @@ const HomePage = () => {
                         <div className="w-full md:w-1/2 p-8">
                             <h2 className="text-3xl font-semibold mb-4">About Us</h2>
                             <p className="mb-4">
-                                We provide professional solutions to deliver safe &amp; efficient projects. This is the space to introduce visitors to the business or brand. Briefly explain who&apos;s behind it, what it does, and what makes it unique. Share its core values and what this site has to offer.
+                                We provide professional solutions to deliver safe &amp; efficient projects. This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does, and what makes it unique. Share its core values and what this site has to offer.
                             </p>
                             <div className={`transition-height ${isReadMore ? 'height-auto' : 'height-0'}`}>
                                 <p>
