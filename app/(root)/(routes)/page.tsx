@@ -16,7 +16,7 @@ const HomePage = () => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
             <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
-            <nav className="flex items-center space-x-4">
+                <nav className="flex items-center space-x-4">
                     <div>
                         <Image src="/Logogogo.jpg" alt="Random Picture" width={60} height={60} className="rounded-lg shadow-md" />
                     </div>
@@ -46,11 +46,10 @@ const HomePage = () => {
                     <div className="absolute inset-0 bg-black opacity-50"></div>
                     <div className="relative flex flex-col items-start justify-center h-full pl-16">
                         <h1 className="text-white text-6xl font-bold leading-tight mb-4">Welcome to Guider</h1>
-                        <p className="text-white text-xl mb-8">Experienced & Reliable Guides, since 2021</p>
+                        <p className="text-white text-xl mb-8">Experienced &amp; Reliable Guides, since 2021</p>
                         <Link href="/find-a-guide">
                             <button className="btn-get-guide">Get a Guide</button>
                         </Link>
-                        
                     </div>
                 </section>
                 <section id="about-us" className="my-8 bg-white shadow-md rounded-lg overflow-hidden">
@@ -58,7 +57,7 @@ const HomePage = () => {
                         <div className="w-full md:w-1/2 p-8">
                             <h2 className="text-3xl font-semibold mb-4">About Us</h2>
                             <p className="mb-4">
-                                We provide professional solutions to deliver safe & efficient projects. This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does, and what makes it unique. Share its core values and what this site has to offer.
+                                We provide professional solutions to deliver safe &amp; efficient projects. This is the space to introduce visitors to the business or brand. Briefly explain who&apos;s behind it, what it does, and what makes it unique. Share its core values and what this site has to offer.
                             </p>
                             <div className={`transition-height ${isReadMore ? 'height-auto' : 'height-0'}`}>
                                 <p>
