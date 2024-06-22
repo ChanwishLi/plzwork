@@ -1,0 +1,943 @@
+body {
+    margin: 0px;
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+
+
+.card-groups,
+.card-group,
+.big-card {
+    aspect-ratio: 5/7;
+}
+
+.card-groups,
+.card-group,
+.big-card {
+    width: 30vh;
+}
+
+.card-group {
+    position: fixed;
+    transition: transform 400ms ease;
+    margin-left: -25%;
+    margin-top: 2%;
+    
+}
+
+.container {
+    transition: transform 400ms ease-in;
+    position: fixed;
+    padding-right:80vh;
+    top:10%;
+    display: inline-block;
+}
+
+.Text, .Paragraph{
+    color: white; /* Change text color to white */
+    display: inline-block;
+    
+}
+.Paragraph {
+    font-size: 2vh;
+    animation: Paragraph 1s ease-out;
+    display: inline-block;
+}
+
+.Text {
+    font-size: 5vh;
+    animation: Text 1s ease-out;
+    display: inline-block;
+}
+
+
+.map {
+    display: inline-block;
+}
+
+.container[data-status="unknown"] {
+    transform: scale(0);
+}
+
+
+.container[data-status="after"] {
+    transform: translateY(50%) scale(0);
+    
+}
+
+.container[data-status="before"] {
+    transform: translateY(-50%) scale(0);
+}
+
+.container[data-status="becoming-active-from-before"] {
+    transform: translateY(-50%) scale(0);
+    transition: none;
+}
+
+.container[data-status="becoming-active-from-after"] {
+    transform: translateY(50%) scale(0);
+    transition: none;
+}
+
+.container[data-status="active"] {
+    transition-delay: 300ms;
+}
+
+
+@keyframes Paragraph {
+    0%   { 
+    transform: translateY(200%); 		
+    }
+    100% { 
+    transform: translateY(0%); 
+    }
+   }
+
+@keyframes Text {
+    0%   { 
+    transform: translateY(200%); 		
+    }
+    100% { 
+    transform: translateY(0%); 
+    }
+   }
+
+
+.card-group[data-status="unknown"] {
+    transform: scale(0);
+}
+
+.card-group[data-status="after"] {
+    transform: translateX(50%) scale(0);
+}
+
+.card-group[data-status="before"] {
+    transform: translateX(-50%) scale(0);
+}
+
+.card-group[data-status="becoming-active-from-before"] {
+    transform: translateX(-50%) scale(0);
+    transition: none;
+}
+
+.card-group[data-status="becoming-active-from-after"] {
+    transform: translateX(50%) scale(0);
+    transition: none;
+}
+
+.card-group[data-status="active"] {
+    transition-delay: 300ms;
+}
+
+.card {
+    aspect-ratio: 5/7;
+    background-color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+}
+
+
+.big-card {
+    width: 30vmin;
+    border-radius: 1vmin;
+
+}
+
+.little-card {
+    width: 12vmin;
+    border-radius: 2vmin;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.big-card:nth-child(2) {
+    transform: translateX(-10%) rotate(-1deg);
+    background-image: url(https://c8.alamy.com/comp/2JHT0T5/a-vertical-shot-of-wat-phra-buddhist-temple-complex-in-the-phra-nakhon-district-bangkok-thailand-2JHT0T5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.big-card:nth-child(4) {
+    transform: rotate(2deg);
+    background-image: url(https://images.unsplash.com/photo-1552550018-5253c1b171e1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.big-card:nth-child(6) {
+    transform: translateX(-6%) rotate(-3deg);
+    background-image: url(/scc.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.big-card:nth-child(8) {
+    transform: translate(10%, 4%) rotate(5deg);
+    background-image: url(https://images.unsplash.com/photo-1558225818-388ab5bcd45d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* el soy gay */
+.little-card:nth-child(1) {
+    transform: translateX(-10%) rotate(-1deg);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/02-%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%AA%E0%B8%B2%E0%B8%A7%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B9%84%E0%B8%95%E0%B8%A2.jpg/2560px-02-%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%AA%E0%B8%B2%E0%B8%A7%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B9%84%E0%B8%95%E0%B8%A2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.little-card:nth-child(3) {
+    transform: rotate(2deg);
+    background-image: url(https://shellshuanshim.com/webimages/jaefai/11-blog-img/074-jaefai-blog-img-01.jpg?sfvrsn=62668211_4);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.little-card:nth-child(5) {
+    transform: translateX(-6%) rotate(-3deg);
+    background-image: url(https://apimain.meetingpointthailand.com/images/1661820585_7.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.little-card:nth-child(7) {
+    transform: translate(10%, 3%) rotate(5deg);
+    background-image: url(https://lp-cms-production.imgix.net/2022-10/GettyImages-902426136.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+.card-group:hover > .big-card:nth-child(2) {
+    transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+    transform: translate(-25%, 8%) rotate(-8deg);
+
+}
+
+.card-group:hover > .big-card:nth-child(6) {
+    transform: translate(25%, 8%) rotate(8deg);
+
+}
+
+
+.card-group:hover > .big-card:nth-child(8) {
+    transform: translate(75%, 16%) rotate(24deg);
+}
+
+
+
+
+
+.card-group:hover > .little-card:nth-child(1) {
+    transform: translate(200%, -160%) rotate(-15deg);
+
+}
+
+.card-group:hover > .little-card:nth-child(3) {
+    transform: translate(160%, 170%) rotate(15deg);
+
+}
+
+.card-group:hover > .little-card:nth-child(5) {
+    transform: translate(-300%, -170%) rotate(15deg);
+    
+}
+
+.card-group:hover > .little-card:nth-child(7) {
+    transform: translate(-200%, 140%) rotate(-15deg);
+
+}
+
+.card-swiper-buttons {
+    margin-top: 7vmin; /* Adjust as needed */
+    position: absolute; /* Position the buttons relative to the container */
+    left: 24%; /* Align the buttons horizontally in the center */
+    transform: translateX(-50%); /* Center the buttons horizontally */
+    display: fixed;
+    justify-content: space-between;
+    padding: 0vmin 4vmin;
+    
+} 
+
+.card-swiper-buttons > button {
+    font-size: 2.5vmin;
+    border: 0.4vmin solid rgb(200, 200, 200);
+    border-radius: 100%;
+    color: white;
+    background-color: transparent;
+    height: 7vmin;
+    width: 7vmin;
+    cursor: pointer;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+.card-swiper-buttons > button:hover {
+    border: 0.4vmin solid rgb(200, 200, 200);
+    color: Black;
+    background-color: white;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+.special-button {
+        font-size: 2.5vmin;
+        border: 0.4vmin solid rgb(200, 200, 200);
+        border-radius: 100%;
+        color: white;
+        background-color: transparent;
+        height: 7vmin;
+        width: 7vmin;
+        cursor: pointer;
+        transition: color 0.15s, background-color 0.15s;
+}
+
+.special-button:hover {
+    border: 0.4vmin solid rgb(200, 200, 200);
+    color: Black;
+    background-color: white;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+
+
+
+.card-group[data-index="1"] > .big-card:nth-child(2) {
+    transform: translateX(-10%) rotate(-1deg);
+    background-image: url(https://www.siamcenter.co.th/public/images/fb-share.jpg?v=1.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="1"] > .big-card:nth-child(4) {
+    transform: rotate(2deg);
+    background-image: url(https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/08/siam-paragon-thumb-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="1"] > .big-card:nth-child(6) {
+    transform: translateX(-6%) rotate(-3deg);
+    background-image: url(https://cms.dmpcdn.com/travel/2023/04/20/eb85ca00-df68-11ed-81c8-271696819d88_webp_original.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="1"] > .big-card:nth-child(8) {
+    transform: translate(10%, 3%) rotate(5deg);
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/05/7e/9d/centralworld.jpg?w=1200&h=1200&s=1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.card-group:hover > .big-card:nth-child(2) {
+    transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+    transform: translate(-25%, 8%) rotate(-8deg);
+
+}
+
+.card-group:hover > .big-card:nth-child(6) {
+    transform: translate(25%, 8%) rotate(8deg);
+
+}
+
+
+.card-group:hover > .big-card:nth-child(8) {
+    transform: translate(75%, 16%) rotate(24deg);
+}
+
+.card-group[data-index="1"] > .little-card:nth-child(1) {
+    transform: translateX(-10%) rotate(-1deg);
+    background-image: url(https://mpics.mgronline.com/pics/Images/565000011421301.JPEG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="1"] > .little-card:nth-child(3) {
+    transform: rotate(2deg);
+    background-image: url(https://f.tpkcdn.com/review-source/e35562f5-4282-1bcc-5e97-523966dafe19.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="1"] > .little-card:nth-child(5) {
+    transform: translateX(-6%) rotate(-3deg);
+    background-image: url(https://www.thailandhighlight.com/wp-content/uploads/2020/07/sea-life-bangkok-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="1"] > .little-card:nth-child(7) {
+    transform: translate(10%, 3%) rotate(5deg);
+    background-image: url(https://www.chula.ac.th/wp-content/uploads/2021/05/shutterstock_680943145_1440x900.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group:hover > .little-card:nth-child(1) {
+    transform: translate(200%, -160%) rotate(-15deg);
+
+}
+
+.card-group:hover > .little-card:nth-child(3) {
+    transform: translate(160%, 170%) rotate(15deg);
+
+}
+
+.card-group:hover > .little-card:nth-child(5) {
+    transform: translate(-300%, -170%) rotate(15deg);
+    
+}
+
+.card-group:hover > .little-card:nth-child(7) {
+    transform: translate(-200%, 140%) rotate(-15deg);
+
+}
+
+.card-group[data-index="2"] > .big-card:nth-child(2) {
+    transform: translateX(-10%) rotate(-1deg);
+    background-image: url(https://unilamp.co.th/userfiles/unilamp/images/Projects/Lhong%201919/20171127-092_KIT5363-Merge_ok1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="2"] > .big-card:nth-child(4) {
+    transform: rotate(2deg);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Chao_Phra_river_-_Princess_Mother_Park_-_Bangkok_Thailand_-_panoramio.jpg/800px-Chao_Phra_river_-_Princess_Mother_Park_-_Bangkok_Thailand_-_panoramio.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="2"] > .big-card:nth-child(6) {
+    transform: translateX(-6%) rotate(-3deg);
+    background-image: url(https://www.prachachat.net/wp-content/uploads/2024/03/%E0%B8%9B%E0%B8%81%E0%B8%99%E0%B8%AD%E0%B8%81-59.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="2"] > .big-card:nth-child(8) {
+    transform: translate(10%, 3%) rotate(5deg);
+    background-image: url(https://f.ptcdn.info/676/054/000/ozi0oalvlUSqMW5rFmW-o.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.card-group:hover > .big-card:nth-child(2) {
+    transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+    transform: translate(-25%, 8%) rotate(-8deg);
+
+}
+
+.card-group:hover > .big-card:nth-child(6) {
+    transform: translate(25%, 8%) rotate(8deg);
+
+}
+
+
+.card-group:hover > .big-card:nth-child(8) {
+    transform: translate(75%, 16%) rotate(24deg);
+}
+
+.card-group[data-index="2"] > .little-card:nth-child(1) {
+    transform: translateX(-10%) rotate(-1deg);
+    background-image: url(https://www.bring-you.info/wp-content/uploads/2020/02/iconsiam-24.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="2"] > .little-card:nth-child(3) {
+    transform: rotate(2deg);
+    background-image: url(https://palanla.com/ckeditor/upload/files/id37/domestic_location/Iconsiam/001.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="2"] > .little-card:nth-child(5) {
+    transform: translateX(-6%) rotate(-3deg);
+    background-image: url(https://pbs.twimg.com/media/EplOZy6VEAE_A87.jpg:large);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group[data-index="2"] > .little-card:nth-child(7) {
+    transform: translate(10%, 3%) rotate(5deg);
+    background-image: url(https://c8.alamy.com/comp/PAND0F/lhong-1919-bangkok-thailand-PAND0F.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-group:hover > .little-card:nth-child(1) {
+    transform: translate(200%, -160%) rotate(-15deg);
+
+}
+
+.card-group:hover > .little-card:nth-child(3) {
+    transform: translate(160%, 170%) rotate(15deg);
+
+}
+
+.card-group:hover > .little-card:nth-child(5) {
+    transform: translate(-300%, -170%) rotate(15deg);
+    
+}
+
+.card-group:hover > .little-card:nth-child(7) {
+    transform: translate(-200%, 140%) rotate(-15deg);
+
+}
+
+.page2 {
+    position: sticky;
+    display: none;
+}
+
+
+.flag-groups {
+    display: flex;
+    gap: 40px; /* Add some space between the flags */
+}
+
+.flag1 {
+    aspect-ratio: 9 / 5;
+    width: 50vmin;
+    background-color: grey;
+    border-radius: 2mm;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px 10px white;
+    transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+    margin-top: 20px;
+}
+
+.flag1:hover {
+    transform: translateY(-10%);
+}
+
+.group[data-index="1"] > .flag1 {
+    background-image: url(https://t4.ftcdn.net/jpg/01/13/25/85/360_F_113258524_ViTlYNmjCbpevjcgsDMD3GBXAhk3MECh.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.group[data-index="2"] > .flag1 {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeV3rXvFZ2e-m9QI2gm4Gq1wrdmyE1J9O47g&s);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.group[data-index="3"] > .flag1 {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/1200px-Flag_of_Thailand.svg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.lang-name {
+    color: white;
+    font-size: 30px;
+    
+}
+
+.textall2TH,
+.textall2CN
+.textall2EN {
+    position: sticky;
+    display: none;
+}
+
+.trip-groups {
+    display: flex;
+    gap: 10vw; 
+}
+
+.triptype1 {
+    aspect-ratio: 6 / 10;
+    width: 25vw;
+    width: 30vmin;
+    border-radius: 2mm;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px 10px white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-size: cover; /* Adjust as needed */
+    padding: 0;
+    margin-top: 20px;
+
+}
+
+.triptype1:hover {
+    transform: translateY(-5%);
+}
+
+.triptype1[data-index="1"] {
+    background-image: url(https://i0.wp.com/thetravelerabroad.com/wp-content/uploads/2018/12/Thai-street-food.jpg?fit=2430%2C1823&ssl=1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.triptype1[data-index="2"] {
+    background-image: url(https://cdn.adventure-life.com/84/28/6/npevb9yv/1300x820.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.triptype1[data-index="3"] {
+    background-image: url(https://www.telegraph.co.uk/multimedia/archive/03341/handbags-thailand_3341777b.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+.dik {
+    z-index: 3;
+}
+
+
+.triptypename[data-index="1"] {
+    color: white;
+    font-size: 30px; 
+}
+
+.triptypename[data-index="2"] {
+    color: white;
+    font-size: 30px; 
+    margin-top: 80px;
+}
+
+.triptypename[data-index="3"] {
+    color: white;
+    font-size: 30px; 
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.triptype1:hover {
+    transform: translateY(-5%);
+}
+
+#hoverImagesContainer, #hoverImagesContainer2 {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 200px); /* Adjust as necessary */
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#hoverImagesContainer .image-row, #hoverImagesContainer2 .image-row2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+}
+
+#hoverImagesContainer .image-row img, #hoverImagesContainer2 .image-row2 img {
+    width: 15vw; /* Adjust size as necessary */
+    max-width: 200px;
+    border-radius: 2mm;
+}
+
+#hoverImagesContainer2 {
+    left: calc(50% + 470px); /* Adjust as necessary */
+    transform: translateY(-45%);
+}
+
+/* New CSS for sliding effects */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#hoverImagesContainer .image-row.slide-up {
+    animation: slideUp 0.5s ease-in-out, slideContinuous 5s linear infinite;
+}
+
+#hoverImagesContainer2 .image-row2.slide-down {
+    animation: slideDown 0.5s ease-in-out, slideContinuous2 5s linear infinite;
+}
+
+@keyframes slideContinuous {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideContinuous2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(13%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+#hoverImagesContainer3, #hoverImagesContainer4 {
+    position: fixed;
+    top: 50%;
+    Right: calc(50% + 200px); /* Adjust as necessary */
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#hoverImagesContainer3 .image-row3, #hoverImagesContainer4 .image-row4 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+}
+
+#hoverImagesContainer3 .image-row3 img, #hoverImagesContainer4 .image-row4 img {
+    width: 15vw; /* Adjust size as necessary */
+    max-width: 200px;
+    border-radius: 2mm;
+}
+
+#hoverImagesContainer4 {
+    Right: calc(50% + 470px); /* Adjust as necessary */
+    transform: translateY(-45%);
+}
+
+/* New CSS for sliding effects */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#hoverImagesContainer3 .image-row3.slide-up {
+    animation: slideUp 0.5s ease-in-out, slideContinuous 5s linear infinite;
+}
+
+#hoverImagesContainer4 .image-row4.slide-down {
+    animation: slideDown 0.5s ease-in-out, slideContinuous2 5s linear infinite;
+}
+
+@keyframes slideContinuous {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideContinuous2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(13%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+#hoverImagesContainer5, #hoverImagesContainer6 {
+    position: fixed;
+    top: 50%;
+    Right: calc(50% + 470px); /* Adjust as necessary */
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#hoverImagesContainer5 .image-row5, #hoverImagesContainer6 .image-row6 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+}
+
+#hoverImagesContainer5 .image-row5 img, #hoverImagesContainer6 .image-row6 img {
+    width: 15vw; /* Adjust size as necessary */
+    max-width: 200px;
+    border-radius: 2mm;
+}
+
+#hoverImagesContainer5 {
+    Left: calc(50% + 470px); /* Adjust as necessary */
+    transform: translateY(-45%);
+}
+
+/* New CSS for sliding effects */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#hoverImagesContainer5 .image-row5.slide-up {
+    animation: slideUp 0.5s ease-in-out, slideContinuous 5s linear infinite;
+}
+
+#hoverImagesContainer6 .image-row6.slide-down {
+    animation: slideDown 0.5s ease-in-out, slideContinuous2 5s linear infinite;
+}
+
+@keyframes slideContinuous {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideContinuous2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(13%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.dikup {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 420px; /* Adjust to position the popup below the button */
+  }
+  
+  a:hover + .dikup {
+    display: block;
+  }
+  
+  a {
+    position: relative;
+    display: inline-block; /* Ensure the hover area includes the button */
+  }
+
+.dik {
+    margin-right:1400px
+}

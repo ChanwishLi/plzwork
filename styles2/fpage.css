@@ -1,0 +1,70 @@
+body {
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+
+/* Profile card styling */
+.profile-card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-card-list .cardv2 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.2s;
+}
+
+.profile-card-list .cardv2:hover {
+    transform: scale(1.05);
+}
+
+.profile-card-list .cardv2 .profile-pic {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+.profile-card-list .cardv2 .details {
+    text-align: center;
+}
+
+.profile-card-list .cardv2 .details .name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-card-list .cardv2 .details .stars {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.profile-card-list .cardv2 .details .badges {
+    margin-bottom: 10px;
+}
+
+.profile-card-list .cardv2 .details .badges .badge {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.profile-card-list .cardv2 .details .description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
