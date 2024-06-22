@@ -1,37 +1,13 @@
-// app/(root)/find-a-guide/page.tsx
+"use client";
 
-
-import Head from 'next/head'
-import Script from 'next/script'
+import { useEffect } from 'react';
 import '../../../../styles/destination.css';
-import '../../../../js/destination.js';
 import { Link as ScrollLink } from "react-scroll";
-import React, { useEffect } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 
-
-
-
-
-const loadScript = (src: string, type = 'text/javascript', isModule = false): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.type = type;
-    if (isModule) {
-      script.type = 'module';
-    }
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error(`Failed to load script ${src}`));
-    document.body.appendChild(script);
-  });
-};
-
 // Function to handle the left button click event
 const handleLeftClick = () => {
-  console.log("Left button clicked");
   const activeGroup = document.querySelector('.card-group[data-status="active"]') as HTMLElement;
   let newIndex = parseInt(activeGroup.dataset.index as string) - 1;
   if (newIndex < 0) {
@@ -42,7 +18,6 @@ const handleLeftClick = () => {
 
 // Function to handle the right button click event
 const handleRightClick = () => {
-  console.log("Right button clicked");
   const activeGroup = document.querySelector('.card-group[data-status="active"]') as HTMLElement;
   let newIndex = parseInt(activeGroup.dataset.index as string) + 1;
   if (newIndex >= document.querySelectorAll('.card-group').length) {
@@ -70,144 +45,52 @@ const switchGroup = (newIndex: number) => {
 
 const FindAGuidePage: React.FC = () => {
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Attach the event handlers to the buttons
+      document.getElementById('left')?.addEventListener('click', handleLeftClick);
+      document.getElementById('right')?.addEventListener('click', handleRightClick);
 
-    // Attach the event handlers to the buttons
-    document.getElementById('left')?.addEventListener('click', handleLeftClick);
-    document.getElementById('right')?.addEventListener('click', handleRightClick);
-
-    // Handle "check" button click
-    const checkButton = document.getElementById("check");
-    if (checkButton) {
-      checkButton.onclick = function() {
-        (document.getElementById("all1") as HTMLElement).style.display = "none";
-        (document.getElementById("textall0") as HTMLElement).style.display = "none";
-        (document.getElementById("textall1") as HTMLElement).style.display = "block"; 
-      };
-    }
-
-    // Handle flag clicks
-    document.querySelectorAll('.flag1[data-index="1"]').forEach(flag => {
-      flag.addEventListener('click', () => {
-        (document.getElementById("textall1") as HTMLElement).style.display = "none";
-        (document.getElementById("textall2EN") as HTMLElement).style.display = "block";
-      });
-    });
-
-    document.querySelectorAll('.flag1[data-index="2"]').forEach(flag => {
-      flag.addEventListener('click', () => {
-        (document.getElementById("textall1") as HTMLElement).style.display = "none";
-        (document.getElementById("textall2CN") as HTMLElement).style.display = "block";
-      });
-    });
-
-    document.querySelectorAll('.flag1[data-index="3"]').forEach(flag => {
-      flag.addEventListener('click', () => {
-        (document.getElementById("textall1") as HTMLElement).style.display = "none";
-        (document.getElementById("textall2TH") as HTMLElement).style.display = "block";
-      });
-    });
-
-    // Function to handle CARD hover events
-    const handleCardHover = (cardId: string, hoverContainerIds: string[]) => {
-      const card = document.getElementById(cardId);
-      const hoverContainers = hoverContainerIds.map(id => document.getElementById(id));
-
-      if (card) {
-        card.addEventListener('mouseover', () => {
-          document.querySelectorAll('.card').forEach(c => {
-            if (c.id !== cardId) {
-              (c as HTMLElement).style.display = 'none';
-            }
-          });
-          hoverContainers.forEach(hoverContainer => {
-            if (hoverContainer) {
-              hoverContainer.style.opacity = '1';
-              hoverContainer.style.visibility = 'visible';
-            }
-          });
-        });
-
-        card.addEventListener('mouseout', () => {
-          document.querySelectorAll('.card').forEach(c => {
-            (c as HTMLElement).style.display = 'block';
-          });
-          hoverContainers.forEach(hoverContainer => {
-            if (hoverContainer) {
-              hoverContainer.style.opacity = '0';
-              hoverContainer.style.visibility = 'hidden';
-            }
-          });
-        });
+      // Handle "check" button click
+      const checkButton = document.getElementById("check");
+      if (checkButton) {
+        checkButton.onclick = function() {
+          (document.getElementById("all1") as HTMLElement).style.display = "none";
+          (document.getElementById("textall0") as HTMLElement).style.display = "none";
+          (document.getElementById("textall1") as HTMLElement).style.display = "block"; 
+        };
       }
-    };
 
-    // Attach CARD hover event handlers
-    const cardHoverConfigs = [
-      { cardId: 'CARD1', hoverContainerIds: ['hoverImagesContainer', 'hoverImagesContainer2'] },
-      { cardId: 'CARD2', hoverContainerIds: ['hoverImagesContainer5', 'hoverImagesContainer6'] },
-      { cardId: 'CARD3', hoverContainerIds: ['hoverImagesContainer3', 'hoverImagesContainer4'] },
-      { cardId: 'CARD4', hoverContainerIds: ['hoverImagesContainer', 'hoverImagesContainer2'] },
-      { cardId: 'CARD5', hoverContainerIds: ['hoverImagesContainer5', 'hoverImagesContainer6'] },
-      { cardId: 'CARD6', hoverContainerIds: ['hoverImagesContainer3', 'hoverImagesContainer4'] },
-      { cardId: 'CARD7', hoverContainerIds: ['hoverImagesContainer', 'hoverImagesContainer2'] },
-      { cardId: 'CARD8', hoverContainerIds: ['hoverImagesContainer5', 'hoverImagesContainer6'] },
-      { cardId: 'CARD9', hoverContainerIds: ['hoverImagesContainer3', 'hoverImagesContainer4'] }
-    ];
-
-    cardHoverConfigs.forEach(config => {
-      handleCardHover(config.cardId, config.hoverContainerIds);
-    });
-
-    // Handle trip type click
-    document.querySelectorAll('.triptype1').forEach(type => {
-      type.addEventListener('click', () => {
-        (document.getElementById("textall2TH") as HTMLElement).style.display = "none";
-        (document.getElementById("textall2CN") as HTMLElement).style.display = "none";
-        (document.getElementById("textall2EN") as HTMLElement).style.display = "none";
-      });
-    });
-
-    // Cleanup function
-    return () => {
-      // Remove the dynamically added scripts
-      const scripts = document.querySelectorAll('script');
-      scripts.forEach((script) => {
-        script.remove();
-      });
-
-      // Remove the event listeners
-      document.getElementById('left')?.removeEventListener('click', handleLeftClick);
-      document.getElementById('right')?.removeEventListener('click', handleRightClick);
-
-      if (checkButton) checkButton.onclick = null;
-
+      // Handle flag clicks
       document.querySelectorAll('.flag1[data-index="1"]').forEach(flag => {
-        flag.removeEventListener('click', () => {
+        flag.addEventListener('click', () => {
           (document.getElementById("textall1") as HTMLElement).style.display = "none";
           (document.getElementById("textall2EN") as HTMLElement).style.display = "block";
         });
       });
+
       document.querySelectorAll('.flag1[data-index="2"]').forEach(flag => {
-        flag.removeEventListener('click', () => {
+        flag.addEventListener('click', () => {
           (document.getElementById("textall1") as HTMLElement).style.display = "none";
           (document.getElementById("textall2CN") as HTMLElement).style.display = "block";
         });
       });
+
       document.querySelectorAll('.flag1[data-index="3"]').forEach(flag => {
-        flag.removeEventListener('click', () => {
+        flag.addEventListener('click', () => {
           (document.getElementById("textall1") as HTMLElement).style.display = "none";
           (document.getElementById("textall2TH") as HTMLElement).style.display = "block";
         });
       });
 
-      cardHoverConfigs.forEach(config => {
-        const card = document.getElementById(config.cardId);
-        const hoverContainers = config.hoverContainerIds.map(id => document.getElementById(id));
+      // Function to handle CARD hover events
+      const handleCardHover = (cardId: string, hoverContainerIds: string[]) => {
+        const card = document.getElementById(cardId);
+        const hoverContainers = hoverContainerIds.map(id => document.getElementById(id));
 
         if (card) {
-          card.removeEventListener('mouseover', () => {
+          card.addEventListener('mouseover', () => {
             document.querySelectorAll('.card').forEach(c => {
-              if (c.id !== config.cardId) {
+              if (c.id !== cardId) {
                 (c as HTMLElement).style.display = 'none';
               }
             });
@@ -219,7 +102,7 @@ const FindAGuidePage: React.FC = () => {
             });
           });
 
-          card.removeEventListener('mouseout', () => {
+          card.addEventListener('mouseout', () => {
             document.querySelectorAll('.card').forEach(c => {
               (c as HTMLElement).style.display = 'block';
             });
@@ -231,18 +114,104 @@ const FindAGuidePage: React.FC = () => {
             });
           });
         }
+      };
+
+      // Attach CARD hover event handlers
+      const cardHoverConfigs = [
+        { cardId: 'CARD1', hoverContainerIds: ['hoverImagesContainer', 'hoverImagesContainer2'] },
+        { cardId: 'CARD2', hoverContainerIds: ['hoverImagesContainer5', 'hoverImagesContainer6'] },
+        { cardId: 'CARD3', hoverContainerIds: ['hoverImagesContainer3', 'hoverImagesContainer4'] },
+        { cardId: 'CARD4', hoverContainerIds: ['hoverImagesContainer', 'hoverImagesContainer2'] },
+        { cardId: 'CARD5', hoverContainerIds: ['hoverImagesContainer5', 'hoverImagesContainer6'] },
+        { cardId: 'CARD6', hoverContainerIds: ['hoverImagesContainer3', 'hoverImagesContainer4'] },
+        { cardId: 'CARD7', hoverContainerIds: ['hoverImagesContainer', 'hoverImagesContainer2'] },
+        { cardId: 'CARD8', hoverContainerIds: ['hoverImagesContainer5', 'hoverImagesContainer6'] },
+        { cardId: 'CARD9', hoverContainerIds: ['hoverImagesContainer3', 'hoverImagesContainer4'] }
+      ];
+
+      cardHoverConfigs.forEach(config => {
+        handleCardHover(config.cardId, config.hoverContainerIds);
       });
 
+      // Handle trip type click
       document.querySelectorAll('.triptype1').forEach(type => {
-        type.removeEventListener('click', () => {
+        type.addEventListener('click', () => {
           (document.getElementById("textall2TH") as HTMLElement).style.display = "none";
           (document.getElementById("textall2CN") as HTMLElement).style.display = "none";
           (document.getElementById("textall2EN") as HTMLElement).style.display = "none";
         });
       });
-    };
-  }, []);
 
+      // Cleanup function
+      return () => {
+        // Remove the event listeners
+        document.getElementById('left')?.removeEventListener('click', handleLeftClick);
+        document.getElementById('right')?.removeEventListener('click', handleRightClick);
+
+        if (checkButton) checkButton.onclick = null;
+
+        document.querySelectorAll('.flag1[data-index="1"]').forEach(flag => {
+          flag.removeEventListener('click', () => {
+            (document.getElementById("textall1") as HTMLElement).style.display = "none";
+            (document.getElementById("textall2EN") as HTMLElement).style.display = "block";
+          });
+        });
+        document.querySelectorAll('.flag1[data-index="2"]').forEach(flag => {
+          flag.removeEventListener('click', () => {
+            (document.getElementById("textall1") as HTMLElement).style.display = "none";
+            (document.getElementById("textall2CN") as HTMLElement).style.display = "block";
+          });
+        });
+        document.querySelectorAll('.flag1[data-index="3"]').forEach(flag => {
+          flag.removeEventListener('click', () => {
+            (document.getElementById("textall1") as HTMLElement).style.display = "none";
+            (document.getElementById("textall2TH") as HTMLElement).style.display = "block";
+          });
+        });
+
+        cardHoverConfigs.forEach(config => {
+          const card = document.getElementById(config.cardId);
+          const hoverContainers = config.hoverContainerIds.map(id => document.getElementById(id));
+
+          if (card) {
+            card.removeEventListener('mouseover', () => {
+              document.querySelectorAll('.card').forEach(c => {
+                if (c.id !== config.cardId) {
+                  (c as HTMLElement).style.display = 'none';
+                }
+              });
+              hoverContainers.forEach(hoverContainer => {
+                if (hoverContainer) {
+                  hoverContainer.style.opacity = '1';
+                  hoverContainer.style.visibility = 'visible';
+                }
+              });
+            });
+
+            card.removeEventListener('mouseout', () => {
+              document.querySelectorAll('.card').forEach(c => {
+                (c as HTMLElement).style.display = 'block';
+              });
+              hoverContainers.forEach(hoverContainer => {
+                if (hoverContainer) {
+                  hoverContainer.style.opacity = '0';
+                  hoverContainer.style.visibility = 'hidden';
+                }
+              });
+            });
+          }
+        });
+
+        document.querySelectorAll('.triptype1').forEach(type => {
+          type.removeEventListener('click', () => {
+            (document.getElementById("textall2TH") as HTMLElement).style.display = "none";
+            (document.getElementById("textall2CN") as HTMLElement).style.display = "none";
+            (document.getElementById("textall2EN") as HTMLElement).style.display = "none";
+          });
+        });
+      };
+    }
+  }, []);
     return (
         <>
 <div id="dick-container">
