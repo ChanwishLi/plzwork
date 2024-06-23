@@ -297,7 +297,7 @@ const FindAGuidePage: React.FC = () => {
           the 50 districts (khet) of Bangkok, Thailand. It is the central
           district of Bangkok, including Rattanakosin Island. This area is rich in history wheter it is temples, old infastructure, they all 
           inhibit some kind of historic meaning. Not only that but this area is filled to the brim with amazing street food! Try the exotic
-          foods at Khao San District. Eat luxurious meals at Sorndaeng. 
+          foods at Khao San District. Eat luxurious meals at Sorndaeng. HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!
         </p>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10961.386564197057!2d100.49360654316247!3d13.752597737085493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2991256a8a1ef%3A0x30100b25de24d90!2sPhra%20Nakhon%2C%20Bangkok!5e0!3m2!1sen!2sth!4v1717408493692!5m2!1sen!2sth"
@@ -317,7 +317,8 @@ const FindAGuidePage: React.FC = () => {
       <div className="Paragraph">
         <p className="gay">
           Pathum Wan (Thai: ปทุมวัน) districts. This area holds many modern shopping malls and distrcits like MBK, Siam, and Centralworld. A DREAM!
-          for shopaholics. If you want to buy something, you have to come here.
+          for shopaholics. If you want to buy something, you have to come here. HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!
+          HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!
         </p>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15502.626160783342!2d100.53922226221601!3d13.739232118050436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed4051cca57%3A0x40100b25de289b0!2sPathum%20Wan%2C%20Bangkok%2010330!5e0!3m2!1sen!2sth!4v1717409213594!5m2!1sen!2sth"
@@ -337,7 +338,9 @@ const FindAGuidePage: React.FC = () => {
       <div className="Paragraph">
         <p className="gay">
         Khlong San is an up-and-coming riverside district with trendy developments like Lhong 1919, a former Chinese courtyard mansion now filled with upscale restaurants and quirky shops offering clothing, home goods, and crafts. Set amid leafy grounds,
-        Icon Siam, a new modern shopping mall is filled with many wonders and yummy thai food.
+        Icon Siam, a new modern shopping mall is filled with many wonders and yummy thai food.HELLOWHELLOW WORLD! WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!
+        HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!
+        HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!HELLOW WORLD!
         </p>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31007.52131419444!2d100.48188391205342!3d13.722072446648594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298e8dba300b3%3A0x30100b25de24ea0!2sKhlong%20San%2C%20Bangkok%2010600!5e0!3m2!1sen!2sth!4v1719051759494!5m2!1sen!2sth"
