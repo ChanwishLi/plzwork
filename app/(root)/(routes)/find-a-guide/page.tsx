@@ -6,6 +6,7 @@ import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 import Image from 'next/image';
 
+
 // Function to handle the left button click event
 const handleLeftClick = () => {
   const activeGroup = document.querySelector('.card-group[data-status="active"]') as HTMLElement;
@@ -340,8 +341,8 @@ const FindAGuidePage: React.FC = () => {
       </div>
       <div className="Paragraph">
         <p className="gay">
-         Hellow World! Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!
-         Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!Hellow World!
+        Khlong San is an up-and-coming riverside district with trendy developments like Lhong 1919, a former Chinese courtyard mansion now filled with restaurants and shops. 
+        Icon Siam, a new modern mall filled with yummy food and many shops is perfect for shopaholics!
         </p>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31007.52131419444!2d100.48188391205342!3d13.722072446648594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298e8dba300b3%3A0x30100b25de24ea0!2sKhlong%20San%2C%20Bangkok%2010600!5e0!3m2!1sen!2sth!4v1719051759494!5m2!1sen!2sth"
