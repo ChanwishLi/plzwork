@@ -36,14 +36,15 @@ body {
 }
 
 .Text, .Paragraph{
-    color: white; /* Change text color to white */
+    color: white; 
     display: inline-block;
-    
+    position: fixed;
 }
 .Paragraph {
     font-size: 2vh;
     animation: Paragraph 1s ease-out;
     display: inline-block;
+    margin-top: 7vh;
 }
 
 .Text {
@@ -282,7 +283,7 @@ body {
     border: 0.4vmin solid rgb(200, 200, 200);
     border-radius: 100%;
     color: white;
-    background-color: transparent;
+    background-color: white;
     height: 7vmin;
     width: 7vmin;
     cursor: pointer;
@@ -301,7 +302,7 @@ body {
         border: 0.4vmin solid rgb(200, 200, 200);
         border-radius: 100%;
         color: white;
-        background-color: transparent;
+        background-color: white;
         height: 7vmin;
         width: 7vmin;
         cursor: pointer;
