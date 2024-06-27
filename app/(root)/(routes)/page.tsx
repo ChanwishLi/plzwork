@@ -42,7 +42,7 @@ const HomePage = () => {
             <main className="flex-1 p-0">
                 <section className="relative h-screen">
                     <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
-                        <source src="https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4" type="video/mp4" />
+                        <source src="tailand.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                     <div className="absolute inset-0 bg-black opacity-50"></div>
