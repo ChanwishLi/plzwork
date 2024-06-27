@@ -256,7 +256,7 @@ const FindAGuidePage: React.FC = () => {
         <div className="card-swiper-buttons">
           <button id="left" onClick={handleLeftClick}>
           <Image
-          src="https://www.svgrepo.com/show/384737/rounded-square-left-direction.svg"
+          src="https://www.svgrepo.com/show/87499/left-arrow.svg"
           width={400}
           height={300}
           className="object-cover rounded-lg shadow-md"
@@ -266,7 +266,7 @@ const FindAGuidePage: React.FC = () => {
 <a>
   <button className="special-button" id="check">
   <Image
-            src="https://www.svgrepo.com/show/506227/like.svg"
+            src="https://www.svgrepo.com/show/532473/heart.svg"
             width={400}
             height={300}
             className="object-cover rounded-lg shadow-md"
@@ -276,7 +276,7 @@ const FindAGuidePage: React.FC = () => {
 </a>
 <button id="right" onClick={handleRightClick}>
 <Image
-          src="https://www.svgrepo.com/show/384732/rounded-square-arrow-right-direction.svg"
+          src="https://www.svgrepo.com/show/55208/right-arrow.svg"
           width={400}
           height={300}
           className="object-cover rounded-lg shadow-md"
