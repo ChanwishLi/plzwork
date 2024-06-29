@@ -7,10 +7,23 @@ body {
 }
 
 
+/* Adjust card sizes for smaller screens */
 .card-groups,
 .card-group,
 .big-card {
     aspect-ratio: 5/7;
+    width: 30vh;
+}
+
+@media (max-width: 600px) {
+    .card-groups,
+    .card-group,
+    .big-card {
+        width: 60vw; /* Adjust width for smaller screens */
+    }
+    .little-card {
+        width: 24vw; /* Adjust little card width for smaller screens */
+    }
 }
 
 .card-groups,
@@ -30,28 +43,44 @@ body {
 .container {
     transition: transform 400ms ease-in;
     position: fixed;
-    padding-right:80vh;
-    top:10%;
+    padding-right: 80vh;
+    top: 10%;
     display: inline-block;
 }
 
-.Text, .Paragraph{
-    color: white; 
+@media (max-width: 600px) {
+    .container {
+        padding-right: 20vw; /* Adjust padding for smaller screens */
+        top: 5%;
+    }
+}
+
+.Text, .Paragraph {
+    color: white;
     display: inline-block;
     position: fixed;
 }
+
 .Paragraph {
     font-size: 2vh;
     animation: Paragraph 1s ease-out;
-    display: inline-block;
     margin-top: 7vh;
 }
 
 .Text {
     font-size: 5vh;
     animation: Text 1s ease-out;
-    display: inline-block;
 }
+
+@media (max-width: 600px) {
+    .Text {
+        font-size: 4vh; /* Adjust font size for smaller screens */
+    }
+    .Paragraph {
+        font-size: 1.5vh; /* Adjust font size for smaller screens */
+    }
+}
+
 
 
 .map {
@@ -139,11 +168,9 @@ body {
     transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
 }
 
-
 .big-card {
     width: 30vmin;
     border-radius: 1vmin;
-
 }
 
 .little-card {
@@ -151,7 +178,16 @@ body {
     border-radius: 2vmin;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+    .big-card {
+        width: 40vmin; /* Adjust width for smaller screens */
+    }
+    .little-card {
+        width: 16vmin; /* Adjust width for smaller screens */
+    }
 }
 
 .big-card:nth-child(2) {
@@ -268,15 +304,14 @@ body {
 }
 
 .card-swiper-buttons {
-    margin-top: 7vmin; /* Adjust as needed */
-    position: absolute; /* Position the buttons relative to the container */
-    left: 24%; /* Align the buttons horizontally in the center */
-    transform: translateX(-50%); /* Center the buttons horizontally */
+    margin-top: 7vmin;
+    position: absolute;
+    left: 24%;
+    transform: translateX(-50%);
     display: fixed;
     justify-content: space-between;
     padding: 0vmin 4vmin;
-    
-} 
+}
 
 .card-swiper-buttons > button {
     font-size: 2.5vmin;
@@ -292,30 +327,44 @@ body {
 
 .card-swiper-buttons > button:hover {
     border: 0.4vmin solid rgb(200, 200, 200);
-    color: Black;
+    color: black;
     background-color: white;
     transition: color 0.15s, background-color 0.15s;
 }
 
 .special-button {
-        font-size: 2.5vmin;
-        border: 0.4vmin solid rgb(200, 200, 200);
-        border-radius: 100%;
-        color: white;
-        background-color: white;
-        height: 7vmin;
-        width: 7vmin;
-        cursor: pointer;
-        transition: color 0.15s, background-color 0.15s;
+    font-size: 2.5vmin;
+    border: 0.4vmin solid rgb(200, 200, 200);
+    border-radius: 100%;
+    color: white;
+    background-color: white;
+    height: 7vmin;
+    width: 7vmin;
+    cursor: pointer;
+    transition: color 0.15s, background-color 0.15s;
 }
 
 .special-button:hover {
     border: 0.4vmin solid rgb(200, 200, 200);
-    color: Black;
+    color: black;
     background-color: white;
     transition: color 0.15s, background-color 0.15s;
 }
 
+/* Media query for small screens */
+@media (max-width: 600px) {
+    .Text, .Paragraph {
+        margin-left: 10vh; /* Increase spacing for small screens */
+    }
+
+    .Text {
+        margin-top: 4vh; /* Increase spacing for small screens */
+    }
+
+    .Paragraph {
+        margin-top: 10vh; /* Increase spacing for small screens */
+    }
+}
 
 
 

@@ -356,7 +356,7 @@ const FindAGuidePage: React.FC = () => {
       </div>
     </div>
   </div>
-  {/* Write your comments here */}
+  {/* lol */}
   <div id="textall1" className="page2">
     <div className="flag-groups">
       <div className="group" data-index={1}>
