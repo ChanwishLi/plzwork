@@ -526,8 +526,10 @@ body {
 
 .card-group:hover > .little-card:nth-child(7) {
     transform: translate(-200%, 140%) rotate(-15deg);
+    
 
 }
+
 
 .page2 {
     position: sticky;
