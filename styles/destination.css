@@ -668,6 +668,18 @@ body {
     display: none;
 }
 
+@media (max-width: 768px) {
+    .flag-groups {
+        flex-direction: column;
+        gap: 20px; /* Adjust the gap for better spacing on mobile */
+    }
+
+    .flag1 {
+        width: 80vmin; /* Adjust width for better visibility on mobile */
+    }
+}
+
+
 .trip-groups {
     display: flex;
     gap: 10vw; 
