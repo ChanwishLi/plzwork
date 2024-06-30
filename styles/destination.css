@@ -522,7 +522,7 @@ body {
 
 
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
     body {
       display: flex;
       flex-direction: column;
@@ -602,7 +602,7 @@ body {
       width: 20vmin;
       border-radius: 2vmin;
       position: absolute;
-      transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%);
     }
 
   }
