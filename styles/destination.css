@@ -588,7 +588,7 @@ body {
     .card-swiper-buttons {
       position: relative;
       top: 140px;
-      left: 110%;
+      left: 87%;
       transform: translateX(-50%);
       margin: 0;
     }
