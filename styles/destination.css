@@ -522,7 +522,7 @@ body {
 
 
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     body {
       display: flex;
       flex-direction: column;
@@ -542,7 +542,7 @@ body {
     .card-group {
       position: absolute; /* Changed from absolute to relative */
       transform: scale(0.8); /* Keep the scale */
-      Right: 35%;
+      Right: 17%;
       transition: opacity 0.3s ease-in-out;
       z-index: 100;
     }
@@ -563,7 +563,7 @@ body {
       text-align: center;
       transition: opacity 0.3s ease-in-out;
       font-size: 24px;
-      Right: 36%;
+      Right: 15%;
     }
   
     .Paragraph {
@@ -571,7 +571,7 @@ body {
       width: 90%;
       text-align: center;
       font-size: 12px;
-      Right: 35%;
+      Right: 15%;
     }
   
     .Text[data-status="inactive"],
@@ -588,7 +588,7 @@ body {
     .card-swiper-buttons {
       position: relative;
       top: 140px;
-      left: 50%;
+      left: 110%;
       transform: translateX(-50%);
       margin: 0;
     }
