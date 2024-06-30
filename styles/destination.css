@@ -522,7 +522,7 @@ body {
 
 
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     body {
       display: flex;
       flex-direction: column;
@@ -604,6 +604,7 @@ body {
       position: absolute;
       transform: translate(-50%, -50%)
     }
+
   }
 
 .page2 {
