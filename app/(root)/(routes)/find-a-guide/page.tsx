@@ -215,9 +215,8 @@ const FindAGuidePage: React.FC = () => {
   }, []);
     return (
         <>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <div id="dick-container">
-  <div id="blob" />
-  <div id="blur" />
   <div id="all1">
     <div className="card-swiper" id="cardall1">
       <div className="card-groups">
@@ -257,8 +256,8 @@ const FindAGuidePage: React.FC = () => {
           <button id="left" onClick={handleLeftClick}>
           <Image
           src="https://www.svgrepo.com/show/87499/left-arrow.svg"
-          width={400}
-          height={300}
+          width={100}
+          height={100}
           className="object-cover rounded-lg shadow-md"
           alt="Left"
         />
@@ -267,8 +266,8 @@ const FindAGuidePage: React.FC = () => {
   <button className="special-button" id="check">
   <Image
             src="https://www.svgrepo.com/show/532473/heart.svg"
-            width={400}
-            height={300}
+            width={100}
+            height={100}
             className="object-cover rounded-lg shadow-md"
             alt="Check"
           />
@@ -277,8 +276,8 @@ const FindAGuidePage: React.FC = () => {
 <button id="right" onClick={handleRightClick}>
 <Image
           src="https://www.svgrepo.com/show/55208/right-arrow.svg"
-          width={400}
-          height={300}
+          width={100}
+          height={100}
           className="object-cover rounded-lg shadow-md"
           alt="Right"
         />
