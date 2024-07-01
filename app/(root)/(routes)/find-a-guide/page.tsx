@@ -294,7 +294,7 @@ const FindAGuidePage: React.FC = () => {
       <div className="Paragraph">
         <p className="gay">
           Phra Nakhon (Thai: พระนคร, pronounced [pʰráʔ ná(ʔ).kʰɔ̄ːn]) is one of
-          the 50 districts (khet) of Bangkok, Thailand. It is the central
+          the 50 districts (khet) of Bangkok, Thailand. It is the central 
           district of Bangkok, including Rattanakosin Island. Neighboring
           districts are, from the north, clockwise: Dusit, Pom Prap Sattru Phai,
           Samphanthawong, and across the Chao Phraya River, Thon Buri, Bangkok
