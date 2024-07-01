@@ -308,6 +308,7 @@ const FindAGuidePage: React.FC = () => {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          class="hello"
         />
       </div>
     </div>

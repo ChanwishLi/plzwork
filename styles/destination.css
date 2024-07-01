@@ -588,9 +588,10 @@ body {
     .card-swiper-buttons {
       position: relative;
       top: 140px;
-      left: 87%;
+      left: 75%;
       transform: translateX(-50%);
       margin: 0;
+      place-items: center;
     }
   
     .big-card {
@@ -605,6 +606,10 @@ body {
       transform: translate(-50%, -50%);
     }
 
+    .hello {
+        place-items: center;
+        margin-left: 60px;
+    }
   }
 
 .page2 {
